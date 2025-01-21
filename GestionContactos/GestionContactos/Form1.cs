@@ -1,3 +1,4 @@
+using System.Numerics;
 using Microsoft.VisualBasic;
 namespace GestionContactos
 {
@@ -13,11 +14,27 @@ namespace GestionContactos
         void LeerNombre(string[] v)
         {
             for (int i = 0; i < vNombre.Length; i++)
-                v[i]= Interaction.InputBox("Introduzca un nombre: ");
+                v[i] = Interaction.InputBox("Introduzca un nombre: ");
+        }
+        string MostrarVector(string[] v)
+        {
+            string texto = "";
+            for(int i = 0; i < v.Length; i++)
+            {
+                texto += v[i];
+                if (i < v.Length - 1) texto += ", ";
+            }
+            return texto;
         }
         private void btnAñadir_Click(object sender, EventArgs e)
         {
             LeerNombre(vNombre);
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(MostrarVector(vNombre));
+            MessageBox.Show(MostrarVector(vTelefono));
         }
     }
 }

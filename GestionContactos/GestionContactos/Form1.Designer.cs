@@ -29,24 +29,38 @@
         private void InitializeComponent()
         {
             btnAñadir = new Button();
+            btnMostrar = new Button();
             SuspendLayout();
             // 
             // btnAñadir
             // 
-            btnAñadir.Location = new Point(90, 59);
+            btnAñadir.Location = new Point(366, 86);
+            btnAñadir.Margin = new Padding(3, 4, 3, 4);
             btnAñadir.Name = "btnAñadir";
-            btnAñadir.Size = new Size(123, 31);
+            btnAñadir.Size = new Size(141, 41);
             btnAñadir.TabIndex = 0;
             btnAñadir.Text = "Añadir Contacto";
             btnAñadir.UseVisualStyleBackColor = true;
             btnAñadir.Click += btnAñadir_Click;
             // 
+            // btnMostrar
+            // 
+            btnMostrar.Location = new Point(550, 85);
+            btnMostrar.Name = "btnMostrar";
+            btnMostrar.Size = new Size(141, 42);
+            btnMostrar.TabIndex = 1;
+            btnMostrar.Text = "Mostrar Contacto";
+            btnMostrar.UseVisualStyleBackColor = true;
+            btnMostrar.Click += btnMostrar_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
+            Controls.Add(btnMostrar);
             Controls.Add(btnAñadir);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -55,5 +69,6 @@
         #endregion
 
         private Button btnAñadir;
+        private Button btnMostrar;
     }
 }
