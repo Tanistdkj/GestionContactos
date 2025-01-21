@@ -11,10 +11,12 @@ namespace GestionContactos
         const int Tam = 10;
         string[] vNombre = new string[Tam];
         string[] vTelefono = new string[Tam];
-        void LeerNombre(string[] v)
+        void LeerNombre(string[] v, string[] vtlf)
         {
-            for (int i = 0; i < vNombre.Length; i++)
+            int i;
+            for (i = 0; i < vNombre.Length; i++)
                 v[i] = Interaction.InputBox("Introduzca un nombre: ");
+                vtlf[i] = Interaction.InputBox("Introduzca un telefono: ");
         }
         string MostrarVector(string[] v)
         {
@@ -28,7 +30,8 @@ namespace GestionContactos
         }
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            LeerNombre(vNombre);
+            MessageBox.Show("Introduzca los usuarios");
+            LeerNombre(vNombre, vTelefono);
         }
 
         private void btnMostrar_Click(object sender, EventArgs e)
