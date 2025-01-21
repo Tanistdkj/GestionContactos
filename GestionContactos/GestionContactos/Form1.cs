@@ -15,8 +15,10 @@ namespace GestionContactos
         {
             int i;
             for (i = 0; i < vNombre.Length; i++)
+            {
                 v[i] = Interaction.InputBox("Introduzca un nombre: ");
                 vtlf[i] = Interaction.InputBox("Introduzca un telefono: ");
+            }
         }
         string MostrarVector(string[] v)
         {
