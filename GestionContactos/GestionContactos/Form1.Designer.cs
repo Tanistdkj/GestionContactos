@@ -30,6 +30,7 @@
         {
             btnAñadir = new Button();
             btnMostrar = new Button();
+            btnEliminar = new Button();
             SuspendLayout();
             // 
             // btnAñadir
@@ -53,11 +54,22 @@
             btnMostrar.UseVisualStyleBackColor = true;
             btnMostrar.Click += btnMostrar_Click;
             // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(366, 168);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(141, 50);
+            btnEliminar.TabIndex = 2;
+            btnEliminar.Text = "Eliminar Contacto";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(btnEliminar);
             Controls.Add(btnMostrar);
             Controls.Add(btnAñadir);
             Margin = new Padding(3, 4, 3, 4);
@@ -70,5 +82,6 @@
 
         private Button btnAñadir;
         private Button btnMostrar;
+        private Button btnEliminar;
     }
 }
