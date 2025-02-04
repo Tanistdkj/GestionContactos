@@ -11,15 +11,33 @@ namespace GestionContactos
         const int Tam = 10;
         string[] vNombre = new string[Tam];
         string[] vTelefono = new string[Tam];
-        void LeerNombre(string[] v, string[] vtlf)
+        void LeerNombre(string[] vNom, string[] vtlf)
         {
             int i;
-            for (i = 0; i < vNombre.Length; i++)
+            string aux;
+            bool parar = false;
+            bool rep = false;
+            for (i = 0; i < vNombre.Length && !parar; i++)
             {
-                v[i] = Interaction.InputBox("Introduzca un nombre: ");
-                vtlf[i] = Interaction.InputBox("Introduzca un telefono: ");
+                if (vNom[i] == null || vNom[i] == "")
+                {
+                    MessageBox.Show("Introducir la persona: " + i);
+                    aux = Interaction.InputBox("Introduzca un nombre: ");
+                    rep = ComprobarIguales(aux, vNom);
+                    if (!rep)
+                    {
+                        vNom[i] = aux;
+                        vtlf[i] = Interaction.InputBox("Introduzca un telefono: ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Persona ya introducida.");
+                    }
+                    parar= true;
+                }
             }
         }
+        bool ComprobarIgual()es
         string MostrarVector(string[] v)
         {
             string texto = "";
