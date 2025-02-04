@@ -68,21 +68,7 @@ namespace GestionContactos
             }
             return -1;
         }
-
-        //bool ContieneContacto(string[] v, string value)
-        //{
-        //    bool result = false;
-        //    for(int i = 0; i <= v.Length; i++)
-        //    {
-        //        if (v[i] == value)
-        //        {
-        //            result = true;
-        //            break;
-        //        }
-        //    }
-        //    return result;
-        //}
-
+                
         void Eliminar(string nombre)
         {
             for (int i = 0; i < vNombre.Length; i++)
