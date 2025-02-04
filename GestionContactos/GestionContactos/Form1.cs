@@ -33,11 +33,22 @@ namespace GestionContactos
                     {
                         MessageBox.Show("Persona ya introducida.");
                     }
-                    parar= true;
+                    parar = true;
                 }
             }
         }
-        bool ComprobarIgual()es
+        bool ComprobarIguales(string aux, string[] vNomb)
+        {
+            bool iguales = false;
+            for (int j = 0; j < Tam && !iguales; j++)
+            {
+                if (aux == vNomb[j])
+                {
+                    iguales = true;
+                }
+            }
+            return iguales;
+        }
         string MostrarVector(string[] v)
         {
             string texto = "";
@@ -53,7 +64,7 @@ namespace GestionContactos
             for (int i = 0; i < v.Length; i++)
             {
                 if (v[i] == value)
-                    return i; 
+                    return i;
             }
             return -1;
         }
@@ -74,7 +85,7 @@ namespace GestionContactos
 
         void Eliminar(string nombre)
         {
-            for(int i = 0; i < vNombre.Length; i++)
+            for (int i = 0; i < vNombre.Length; i++)
             {
                 if (Index(vNombre, nombre) != -1)
                 {
@@ -98,6 +109,35 @@ namespace GestionContactos
         {
             string nombre = Interaction.InputBox("Introduzca el nombre a eliminar");
             Eliminar(nombre);
+        }
+
+        bool ModiTelef(string[] vNombre, string[] vTlf)
+        {
+            string nombre;
+            bool parar = false;
+            nombre = Interaction.InputBox("Introduzca el nombre del contacto del cual quiere modificar el teléfono.");
+            for (int i = 0; i < vNombre.Length; i++)
+            {
+                if (vNombre[i] == nombre)
+                {
+                    vTlf[i] = Interaction.InputBox("Introduzca el nuevo número de teléfono: ");
+                    parar = true;
+                }
+            }
+            return parar;
+        }
+        private void btnModifTlf_Click(object sender, EventArgs e)
+        {
+            bool cambiado;
+            cambiado = ModiTelef(vNombre, vTelefono);
+            if (cambiado)
+            {
+                MessageBox.Show("Teléfono modificado.");
+            }
+            else 
+            {
+                MessageBox.Show("El contacto no existe.");
+            }
         }
     }
 }

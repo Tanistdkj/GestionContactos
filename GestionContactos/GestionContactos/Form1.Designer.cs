@@ -31,14 +31,14 @@
             btnAñadir = new Button();
             btnMostrar = new Button();
             btnEliminar = new Button();
+            btnModifTlf = new Button();
             SuspendLayout();
             // 
             // btnAñadir
             // 
-            btnAñadir.Location = new Point(366, 86);
-            btnAñadir.Margin = new Padding(3, 4, 3, 4);
+            btnAñadir.Location = new Point(52, 64);
             btnAñadir.Name = "btnAñadir";
-            btnAñadir.Size = new Size(141, 41);
+            btnAñadir.Size = new Size(123, 31);
             btnAñadir.TabIndex = 0;
             btnAñadir.Text = "Añadir Contacto";
             btnAñadir.UseVisualStyleBackColor = true;
@@ -46,9 +46,10 @@
             // 
             // btnMostrar
             // 
-            btnMostrar.Location = new Point(550, 85);
+            btnMostrar.Location = new Point(236, 63);
+            btnMostrar.Margin = new Padding(3, 2, 3, 2);
             btnMostrar.Name = "btnMostrar";
-            btnMostrar.Size = new Size(141, 42);
+            btnMostrar.Size = new Size(123, 32);
             btnMostrar.TabIndex = 1;
             btnMostrar.Text = "Mostrar Contacto";
             btnMostrar.UseVisualStyleBackColor = true;
@@ -56,23 +57,34 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(366, 168);
+            btnEliminar.Location = new Point(52, 128);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(141, 50);
+            btnEliminar.Size = new Size(123, 38);
             btnEliminar.TabIndex = 2;
             btnEliminar.Text = "Eliminar Contacto";
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // btnModifTlf
+            // 
+            btnModifTlf.Location = new Point(236, 128);
+            btnModifTlf.Name = "btnModifTlf";
+            btnModifTlf.Size = new Size(123, 38);
+            btnModifTlf.TabIndex = 3;
+            btnModifTlf.Text = "Modificar telefono";
+            btnModifTlf.UseVisualStyleBackColor = true;
+            btnModifTlf.Click += btnModifTlf_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(407, 218);
+            Controls.Add(btnModifTlf);
             Controls.Add(btnEliminar);
             Controls.Add(btnMostrar);
             Controls.Add(btnAñadir);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -83,5 +95,6 @@
         private Button btnAñadir;
         private Button btnMostrar;
         private Button btnEliminar;
+        private Button btnModifTlf;
     }
 }
